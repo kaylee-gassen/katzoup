@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="katzoup is a Denver-based DJ playing dubstep, riddim, and drum and bass.">
+  <meta name="description" content="Denver-based DJ playing dubstep, riddim, and drum and bass.">
   <title>katzoup | Denver DJ</title>
-  <link rel="icon" href="logo.svg" type="image/svg+xml">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M64%2022c-17%200-31%2013-31%2030%200%203%200%206%201%209l-6%202%204%2010%208-3c6%209%2016%2015%2024%2015s18-6%2024-15l8%203%204-10-6-2c1-3%201-6%201-9%200-17-14-30-31-30z%22%2F%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M34%2026%2022%206l18%2016zM94%2026l12-20-18%2016z%22%2F%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M28%2054c6-16%2020-24%2036-24s30%208%2036%2024c-11%205-23%207-36%207s-25-2-36-7z%22%2F%3E%3Crect%20x%3D%2224%22%20y%3D%2250%22%20width%3D%2280%22%20height%3D%2210%22%20rx%3D%224%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20fill%3D%22none%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%225%22%20stroke-linecap%3D%22round%22%20d%3D%22M36%2048C22%2028%2018%2012%2026%204M92%2048c14-20%2018-36%2010-44%22%2F%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M42%2044%2036%2024%2052%2036zM86%2044l6-20-16%2012z%22%2F%3E%3Cellipse%20cx%3D%2264%22%20cy%3D%2262%22%20rx%3D%2224%22%20ry%3D%2222%22%20fill%3D%22%2307070b%22%2F%3E%3Cellipse%20cx%3D%2252%22%20cy%3D%2260%22%20rx%3D%226%22%20ry%3D%228%22%20fill%3D%22%23ffffff%22%2F%3E%3Cellipse%20cx%3D%2276%22%20cy%3D%2260%22%20rx%3D%226%22%20ry%3D%228%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M64%2066%2056%2076h16z%22%2F%3E%3Cpath%20fill%3D%22none%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20d%3D%22M36%2064H18M36%2070H16M92%2064h18M92%2070h20%22%2F%3E%3C%2Fsvg%3E" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://api.fontshare.com">
@@ -78,25 +78,22 @@
       gap: 24px;
     }
     .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
       font-family: "Pally", Arial, sans-serif;
       font-size: 1.45rem;
       font-weight: 700;
       line-height: 1;
       letter-spacing: -0.02em;
       text-decoration: none;
-      color: inherit;
     }
-    .brand-lockup {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .brand-logo {
-      width: 40px;
-      height: 40px;
+    .brand-mascot {
+      display: block;
+      width: 36px;
+      height: 36px;
       flex-shrink: 0;
-      object-fit: contain;
-      filter: drop-shadow(0 2px 10px rgba(0,0,0,0.35));
+      filter: drop-shadow(0 0 10px rgba(157,124,255,0.35));
     }
     .brand span { color: var(--violet); }
     .nav-links {
@@ -163,17 +160,19 @@
     .hero-media img {
       width: 100%; height: 100%;
       object-fit: cover;
-      object-position: center 18%;
-      opacity: 0.92;
-      filter: saturate(1.1) contrast(1.04);
+      object-position: 52% 18%;
+      transform: scale(1.04);
+      transform-origin: 50% 22%;
+      opacity: 0.97;
+      filter: saturate(1.12) contrast(1.06);
     }
     .hero-media::after {
       content: "";
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(90deg, rgba(7,7,11,0.82) 0%, rgba(7,7,11,0.48) 48%, rgba(7,7,11,0.68) 100%),
-        linear-gradient(180deg, rgba(7,7,11,0.12) 0%, rgba(7,7,11,0.1) 38%, rgba(7,7,11,0.96) 100%);
+        linear-gradient(90deg, rgba(7,7,11,0.72) 0%, rgba(7,7,11,0.38) 42%, rgba(7,7,11,0.55) 100%),
+        linear-gradient(180deg, rgba(7,7,11,0.12) 0%, rgba(7,7,11,0.08) 35%, rgba(7,7,11,0.88) 100%);
     }
     .hero-inner, .section-inner {
       width: min(var(--max), calc(100% - 40px));
@@ -198,33 +197,44 @@
       background: currentColor;
     }
     h1, h2, h3, p { margin-top: 0; }
-    #hero-title {
-      max-width: 900px;
+    .hero-title-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      gap: 12px 18px;
       margin-bottom: 20px;
+    }
+    .hero-title-row .hero-mascot {
+      display: block;
+      width: clamp(52px, 12vw, 76px);
+      height: clamp(52px, 12vw, 76px);
+      flex-shrink: 0;
+      margin-bottom: 0.12em;
+      filter: drop-shadow(0 12px 28px rgba(0,0,0,0.45));
+    }
+    h1 {
+      max-width: 900px;
+      margin-bottom: 0;
       font-family: "Pally", Arial, sans-serif;
       font-weight: 700;
-      font-size: clamp(3.25rem, 11vw, 7.25rem);
+      font-size: clamp(3.1rem, 11vw, 7.4rem);
       line-height: 0.82;
       letter-spacing: 0;
       text-transform: lowercase;
-      position: relative;
-      display: inline-block;
-      isolation: isolate;
-      background-image: linear-gradient(
-        168deg,
-        #ffffff 0%,
-        #f4f0ff 38%,
-        #d8c8ff 72%,
-        rgba(157,124,255,0.92) 100%
-      );
+      color: transparent;
+      background-image: linear-gradient(168deg, #ffffff 0%, #f6f2ff 32%, #e4d8ff 58%, #cbb6ff 82%, #b8a0ff 100%);
+      background-size: 120% 140%;
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
-      color: transparent;
-      filter: drop-shadow(0 18px 56px rgba(0,0,0,0.5));
-      animation: title-flicker 5.5s ease-in-out infinite;
+      text-shadow: none;
+      filter: drop-shadow(0 18px 48px rgba(0,0,0,0.5));
+      position: relative;
+      display: inline-block;
+      isolation: isolate;
+      animation: wordmark-flicker 5.5s ease-in-out infinite;
     }
-    #hero-title::before, #hero-title::after {
+    h1::before, h1::after {
       content: attr(data-text);
       position: absolute;
       inset: 0;
@@ -232,23 +242,17 @@
       pointer-events: none;
       opacity: 0;
       mix-blend-mode: screen;
+      background: none;
     }
-    #hero-title::before {
+    h1::before {
       color: var(--aqua);
       clip-path: polygon(0 10%, 100% 10%, 100% 39%, 0 39%);
       animation: glitch-a 7s infinite;
     }
-    #hero-title::after {
+    h1::after {
       color: var(--rose);
       clip-path: polygon(0 58%, 100% 58%, 100% 86%, 0 86%);
       animation: glitch-b 7s 90ms infinite;
-    }
-    .hero-mark {
-      width: clamp(56px, 11vw, 88px);
-      height: auto;
-      margin: 0 0 16px;
-      opacity: 0.96;
-      filter: drop-shadow(0 10px 32px rgba(0,0,0,0.45));
     }
     .hero-copy {
       max-width: 560px;
@@ -527,17 +531,19 @@
       86% { opacity: 0.35; transform: translate3d(-3px,0,0); }
       88% { opacity: 0; transform: translate3d(0,0,0); }
     }
-    @keyframes title-flicker {
-      0%, 100% { opacity: 1; filter: drop-shadow(0 18px 56px rgba(0,0,0,0.5)) brightness(1); }
-      41% { opacity: 1; filter: drop-shadow(0 18px 56px rgba(0,0,0,0.5)) brightness(1); }
-      42% { opacity: 0.88; filter: drop-shadow(0 18px 56px rgba(0,0,0,0.48)) brightness(1.06); }
-      43% { opacity: 0.94; filter: drop-shadow(0 18px 56px rgba(0,0,0,0.5)) brightness(0.96); }
-      44% { opacity: 1; filter: drop-shadow(0 18px 56px rgba(0,0,0,0.5)) brightness(1.02); }
-      45% { opacity: 0.91; filter: drop-shadow(0 18px 56px rgba(0,0,0,0.5)) brightness(1); }
-      46% { opacity: 1; filter: drop-shadow(0 18px 56px rgba(0,0,0,0.5)) brightness(1); }
-      72% { opacity: 1; filter: drop-shadow(0 18px 56px rgba(0,0,0,0.5)) brightness(1); }
-      73% { opacity: 0.9; filter: drop-shadow(0 18px 56px rgba(0,0,0,0.48)) brightness(1.04); }
-      74% { opacity: 1; filter: drop-shadow(0 18px 56px rgba(0,0,0,0.5)) brightness(1); }
+    @keyframes wordmark-flicker {
+      0%, 100% { opacity: 1; filter: drop-shadow(0 18px 48px rgba(0,0,0,0.5)) brightness(1); }
+      41% { opacity: 1; }
+      42% { opacity: 0.88; filter: drop-shadow(0 18px 48px rgba(0,0,0,0.45)) brightness(1.04); }
+      43% { opacity: 0.94; filter: drop-shadow(0 18px 48px rgba(0,0,0,0.5)) brightness(0.97); }
+      44% { opacity: 1; filter: drop-shadow(0 18px 48px rgba(0,0,0,0.5)) brightness(1); }
+      61% { opacity: 1; }
+      62% { opacity: 0.82; filter: drop-shadow(0 18px 48px rgba(0,0,0,0.48)) brightness(1.06); }
+      63% { opacity: 0.9; filter: drop-shadow(0 18px 48px rgba(0,0,0,0.5)) brightness(0.95); }
+      64% { opacity: 1; filter: drop-shadow(0 18px 48px rgba(0,0,0,0.5)) brightness(1); }
+      78% { opacity: 1; }
+      79% { opacity: 0.91; }
+      80% { opacity: 1; }
     }
 
     /* ── REDUCED MOTION ── */
@@ -561,7 +567,7 @@
       .nav-links .button { min-height: 38px; padding: 0 12px; }
       .hero { min-height: 92svh; padding: 116px 0 48px; }
       .hero-inner, .section-inner, .footer-inner { width: min(100% - 28px, var(--max)); }
-      #hero-title { font-size: clamp(2.75rem, 16vw, 4.25rem); }
+      h1 { font-size: clamp(2.5rem, 14vw, 4rem); }
       .section { padding: 68px 0; }
       .section-head { gap: 18px; }
       .mix-grid, .shop-grid { grid-template-columns: 1fr; }
@@ -571,18 +577,30 @@
   </style>
 </head>
 <body>
+  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="128" height="128" style="position:absolute;left:-9999px;top:0;overflow:hidden;pointer-events:none">
+    <symbol id="katzoup-mascot-symbol" viewBox="0 0 128 128">
+      <path fill="#ffffff" d="M64 22c-17 0-31 13-31 30 0 3 0 6 1 9l-6 2 4 10 8-3c6 9 16 15 24 15s18-6 24-15l8 3 4-10-6-2c1-3 1-6 1-9 0-17-14-30-31-30z"/>
+      <path fill="#ffffff" d="M34 26 22 6l18 16zM94 26l12-20-18 16z"/>
+      <path fill="#ffffff" d="M28 54c6-16 20-24 36-24s30 8 36 24c-11 5-23 7-36 7s-25-2-36-7z"/>
+      <rect x="24" y="50" width="80" height="10" rx="4" fill="#ffffff"/>
+      <path fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round" d="M36 48C22 28 18 12 26 4M92 48c14-20 18-36 10-44"/>
+      <path fill="#ffffff" d="M42 44 36 24 52 36zM86 44l6-20-16 12z"/>
+      <ellipse cx="64" cy="62" rx="24" ry="22" fill="#07070b"/>
+      <ellipse cx="52" cy="60" rx="6" ry="8" fill="#ffffff"/>
+      <ellipse cx="76" cy="60" rx="6" ry="8" fill="#ffffff"/>
+      <path fill="#ffffff" d="M64 66 56 76h16z"/>
+      <path fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" d="M36 64H18M36 70H16M92 64h18M92 70h20"/>
+    </symbol>
+  </svg>
 
   <header class="site-header" id="site-header">
     <nav class="nav" aria-label="Main navigation">
-      <a class="brand brand-lockup" href="#top">
-        <img class="brand-logo" src="logo.svg" width="40" height="40" alt="" decoding="async">
-        katz<span>oup</span>
-      </a>
+      <a class="brand" href="#top"><svg class="brand-mascot" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="36" height="36" viewBox="0 0 128 128" role="img" aria-hidden="true" focusable="false"><use href="#katzoup-mascot-symbol" xlink:href="#katzoup-mascot-symbol"></use></svg>katz<span>oup</span></a>
       <ul class="nav-links">
         <li><a href="#music">Mixes</a></li>
         <li><a href="#shop">Shop</a></li>
         <li><a href="#about">About</a></li>
-        <li><a class="button" href="https://soundcloud.com" target="_blank" rel="noopener">SoundCloud</a></li>
+        <li><a class="button" href="https://soundcloud.com/kaylchip-142490214" target="_blank" rel="noopener">SoundCloud</a></li>
       </ul>
     </nav>
   </header>
@@ -600,12 +618,14 @@
         >
       </div>
       <div class="hero-inner">
-        <img class="hero-mark" src="logo.svg" width="88" height="88" alt="" decoding="async">
         <p class="kicker">Denver DJ | Dubstep | Riddim | DnB</p>
-        <h1 id="hero-title" data-text="katzoup">katzoup</h1>
-        <p class="hero-copy">Bass-forward mixes, handmade drops, and a little record of the nights that made it all feel real.</p>
+        <div class="hero-title-row">
+          <svg class="hero-mascot" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="76" height="76" viewBox="0 0 128 128" role="img" aria-hidden="true" focusable="false"><use href="#katzoup-mascot-symbol" xlink:href="#katzoup-mascot-symbol"></use></svg>
+          <h1 id="hero-title" data-text="katzoup">katzoup</h1>
+        </div>
+        <p class="hero-copy">I like my riddim soupy.</p>
         <div class="hero-actions">
-          <a class="button" href="#music">Hear the mixes</a>
+          <a class="button" href="#music">Listen to the soup</a>
           <a class="button secondary" href="#about">Booking and contact</a>
         </div>
       </div>
@@ -616,10 +636,10 @@
       <div class="section-inner">
         <div class="section-head">
           <div>
-            <p class="kicker">The sound</p>
+            <p class="kicker">The soup</p>
             <h2 class="section-title" id="music-title">Recent mixes</h2>
           </div>
-          <p class="section-copy">Keep this section current with real SoundCloud links as mixes go live. The structure is ready for embeds later.</p>
+          
         </div>
         <div class="mix-grid">
           <article class="mix-card">
@@ -630,9 +650,9 @@
             </div>
             <div class="mix-body">
               <p class="meta">Mix 001</p>
-              <h3>Late Night Riddim Vol. 1</h3>
-              <p>Heavy bass, clean transitions, and enough pressure to feel intentional.</p>
-              <a class="text-link" href="https://soundcloud.com" target="_blank" rel="noopener">Listen</a>
+              <h3>Dino Riddim</h3>
+             
+              <a class="text-link" href="https://soundcloud.com/kaylchip-142490214/dino-riddim" target="_blank" rel="noopener">Listen</a>
             </div>
           </article>
           <article class="mix-card">
@@ -643,9 +663,9 @@
             </div>
             <div class="mix-body">
               <p class="meta">Mix 002</p>
-              <h3>DnB After Midnight</h3>
-              <p>Fast, bright, and built for the part of the night when everyone locks in.</p>
-              <a class="text-link" href="https://soundcloud.com" target="_blank" rel="noopener">Listen</a>
+              <h3>Dino DnB</h3>
+            
+              <a class="text-link" href="https://soundcloud.com/kaylchip-142490214/dino-dee-n-bee" target="_blank" rel="noopener">Listen</a>
             </div>
           </article>
           <article class="mix-card">
@@ -656,9 +676,9 @@
             </div>
             <div class="mix-body">
               <p class="meta">Mix 003</p>
-              <h3>Dubstep Selections</h3>
-              <p>Deep drops, strange edges, and the kind of pacing that lets the lows breathe.</p>
-              <a class="text-link" href="https://soundcloud.com" target="_blank" rel="noopener">Listen</a>
+              <h3>Lil Miss Riddim Frat Boi</h3>
+              
+              <a class="text-link" href="https://soundcloud.com/kaylchip-142490214/little-miss-frat-boi" target="_blank" rel="noopener">Listen</a>
             </div>
           </article>
         </div>
@@ -677,9 +697,9 @@
       </div>
       <div class="feature-inner">
         <div class="feature-copy">
-          <p class="kicker">Live energy</p>
+          <p class="kicker">Red Rocks</p>
           <h2 id="feature-title">Bass in yo face.</h2>
-          <p>The strongest version of this site is part press kit and part home base: a place where people can hear the sound, understand the vibe, and know exactly how to book or follow.</p>
+          <p>Where you can literally get rocked by the bass. for those who know, know, and those who haven't should find out.</p>
         </div>
       </div>
     </section>
@@ -689,8 +709,8 @@
       <div class="section-inner">
         <div class="section-head">
           <div>
-            <p class="kicker">The shop</p>
-            <h2 class="section-title" id="shop-title">Merch and handmade</h2>
+            <p class="kicker">The Soup Shop</p>
+            <h2 class="section-title" id="shop-title">Merchhhh</h2>
           </div>
           <p class="section-copy">Marked as coming soon so the page feels finished without promising a live checkout before it exists.</p>
         </div>
@@ -702,8 +722,8 @@
           </article>
           <article class="shop-card">
             <div class="shop-visual"><span class="shop-mark">J</span><span class="tag">Soon</span></div>
-            <div class="shop-body"><p class="meta">Jewelry</p><h3>Wrapped crystal sets</h3><p>Wire-wrapped by hand, with each piece treated as a one-off.</p></div>
-            <div class="shop-footer"><span class="price">$22+</span><a class="shop-button" href="#about">Notify me</a></div>
+            <div class="shop-body"><p class="meta">Jewelry</p><h3>Rocks rocks rocks</h3><p>Hand picked wire wrapped gemstones</p></div>
+            <div class="shop-footer"><span class="price">$15+</span><a class="shop-button" href="#about">Notify me</a></div>
           </article>
           <article class="shop-card">
             <div class="shop-visual"><span class="shop-mark">S</span><span class="tag">Soon</span></div>
@@ -712,7 +732,7 @@
           </article>
           <article class="shop-card">
             <div class="shop-visual"><span class="shop-mark">R</span><span class="tag">Soon</span></div>
-            <div class="shop-body"><p class="meta">Minerals</p><h3>Rock collection</h3><p>Personally picked rocks and minerals, cleaned and labeled.</p></div>
+            <div class="shop-body"><p class="meta">Cats</p><h3>Cat inspired items</h3><p>cuz who doesn't love cats?</p></div>
             <div class="shop-footer"><span class="price">$12+</span><a class="shop-button" href="#about">Notify me</a></div>
           </article>
         </div>
@@ -733,12 +753,11 @@
         <div class="about-copy">
           <p class="kicker">Behind it</p>
           <h2 class="section-title" id="about-title">Kaylee, aka katzoup.</h2>
-          <p>I DJ <strong>dubstep, riddim, and drum and bass</strong> out of Denver. The thread through all of it is simple: heavy sound, careful taste, and a show that feels human.</p>
-          <p>I also make jewelry, collect rocks, take photos, and build merch when the timing is right. This site gives all of that one polished place to live.</p>
+          <p>I DJ <strong>mostly</strong> riddim and some dnb. Big fan of cats, rocks, and plants. Click the links below if ur a cool cat.</p>
           <div class="contact-panel" aria-label="Contact links">
-            <a class="contact-row" href="https://soundcloud.com" target="_blank" rel="noopener"><span>SoundCloud</span><span>-&gt;</span></a>
-            <a class="contact-row" href="https://www.instagram.com/" target="_blank" rel="noopener"><span>Instagram</span><span>-&gt;</span></a>
-            <a class="contact-row" href="mailto:booking@example.com"><span>Booking and contact</span><span>-&gt;</span></a>
+            <a class="contact-row" href="https://soundcloud.com/kaylchip-142490214" target="_blank" rel="noopener"><span>SoundCloud</span><span>-&gt;</span></a>
+            <a class="contact-row" href="https://www.instagram.com/kayls.wav_/" target="_blank" rel="noopener"><span>Instagram</span><span>-&gt;</span></a>
+            <a class="contact-row" href="kayls.wav@gmail.com"><span>Booking and contact</span><span>-&gt;</span></a>
             <a class="contact-row" href="#shop"><span>Shop updates</span><span>-&gt;</span></a>
           </div>
         </div>
@@ -749,10 +768,7 @@
 
   <footer class="site-footer">
     <div class="footer-inner">
-      <a class="brand brand-lockup" href="#top">
-        <img class="brand-logo" src="logo.svg" width="40" height="40" alt="" decoding="async">
-        katz<span>oup</span>
-      </a>
+      <a class="brand" href="#top"><svg class="brand-mascot" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="36" height="36" viewBox="0 0 128 128" role="img" aria-hidden="true" focusable="false"><use href="#katzoup-mascot-symbol" xlink:href="#katzoup-mascot-symbol"></use></svg>katz<span>oup</span></a>
       <span>Denver, CO / katzoup / 2026</span>
     </div>
   </footer>
