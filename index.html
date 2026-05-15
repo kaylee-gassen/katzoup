@@ -50,18 +50,24 @@
       justify-content: space-between; gap: 24px;
     }
     .brand-logo {
-      height: 38px; width: auto; display: block;
-      filter:
-        drop-shadow(0 0 6px rgba(157,124,255,0.35))
-        sepia(0.15) hue-rotate(220deg) saturate(1.2) brightness(1.1);
-      animation: logoFlicker 8s ease-in-out infinite;
-      transition: filter 0.25s;
-    }
-    .brand-logo:hover {
-      filter:
-        drop-shadow(0 0 14px rgba(157,124,255,0.8))
-        sepia(0.3) hue-rotate(240deg) saturate(1.6) brightness(1.2);
-    }
+  height: 36px;
+  width: auto;
+  display: block;
+ 
+  /* Ombre white → purple via filter cycling */
+  animation: logoOmbre 6s ease-in-out infinite;
+  transition: filter 0.25s, transform 0.2s;
+}
+ 
+.brand-logo:hover {
+  transform: scale(1.06);
+  filter:
+    drop-shadow(0 0 14px rgba(157, 124, 255, 0.9))
+    brightness(1.3)
+    sepia(0.5)
+    hue-rotate(240deg)
+    saturate(2);
+}
     @keyframes logoFlicker {
       0%,100% { filter: drop-shadow(0 0 5px rgba(255,255,255,0.4)) sepia(0.05) hue-rotate(200deg) saturate(1.1) brightness(1.05); }
       18%      { filter: drop-shadow(0 0 8px rgba(200,180,255,0.5)) sepia(0.15) hue-rotate(220deg) saturate(1.2) brightness(1.12); }
@@ -321,51 +327,95 @@
       font-family: "Fragment Mono", monospace; font-size: 0.68rem;
       letter-spacing: 0.1em; text-transform: uppercase;
     }
-    .footer-logo {
-      height: 30px; width: auto;
-      filter: drop-shadow(0 0 5px rgba(157,124,255,0.3)); opacity: 0.6; animation: logoFlicker 8s ease-in-out infinite;
-    }
-
-    /* ANIMATIONS */
-    @keyframes pulse {
-      from { opacity: 0.45; transform: scaleY(0.55); }
-      to   { opacity: 1;    transform: scaleY(1); }
-    }
-    @keyframes glitch-a {
-      0%, 82%, 100% { opacity: 0; transform: translate3d(0,0,0); }
-      84% { opacity: 0.75; transform: translate3d(-5px,-1px,0); }
-      86% { opacity: 0.25; transform: translate3d(4px,1px,0); }
-      88% { opacity: 0;    transform: translate3d(0,0,0); }
-    }
-    @keyframes glitch-b {
-      0%, 82%, 100% { opacity: 0; transform: translate3d(0,0,0); }
-      84% { opacity: 0.65; transform: translate3d(5px,1px,0); }
-      86% { opacity: 0.35; transform: translate3d(-3px,0,0); }
-      88% { opacity: 0;    transform: translate3d(0,0,0); }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        scroll-behavior: auto !important; animation: none !important; transition: none !important;
-      }
-    }
-    @media (max-width: 980px) {
-      .section-head, .about-grid { grid-template-columns: 1fr; }
-      .mix-grid, .shop-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
-    }
-    @media (max-width: 720px) {
-      .nav { width: min(100% - 28px, var(--max)); min-height: 64px; }
-      .nav-links li:not(:last-child) { display: none; }
-      .nav-links { gap: 0; }
-      .nav-links .button { min-height: 38px; padding: 0 12px; }
-      .hero { min-height: 92svh; padding: 116px 0 48px; }
-      .hero-inner, .section-inner, .footer-inner { width: min(100% - 28px, var(--max)); }
-      h1 { font-size: clamp(3.2rem, 18vw, 4.5rem); }
-      .section { padding: 68px 0; }
-      .section-head { gap: 18px; }
-      .mix-grid, .shop-grid { grid-template-columns: 1fr; }
-      .feature-band { min-height: 430px; padding: 56px 0; }
-      .footer-inner { align-items: flex-start; flex-direction: column; }
-    }
+   .footer-logo {
+  height: 28px;
+  width: auto;
+  opacity: 0.65;
+  animation: logoOmbre 6s ease-in-out infinite;
+  animation-delay: -3s;
+}
+ 
+/* Flicker + ombre white → purple cycle */
+@keyframes logoOmbre {
+ 
+  /* White — bright, unsaturated */
+  0% {
+    filter:
+      brightness(1.4)
+      saturate(0.2)
+      drop-shadow(0 0 4px rgba(255, 255, 255, 0.5));
+  }
+ 
+  /* Warm white */
+  15% {
+    filter:
+      brightness(1.3)
+      saturate(0.5)
+      sepia(0.1)
+      hue-rotate(200deg)
+      drop-shadow(0 0 6px rgba(220, 200, 255, 0.5));
+  }
+ 
+  /* Lavender */
+  32% {
+    filter:
+      brightness(1.2)
+      saturate(1.0)
+      sepia(0.2)
+      hue-rotate(220deg)
+      drop-shadow(0 0 8px rgba(180, 150, 255, 0.6));
+  }
+ 
+  /* Mid purple */
+  50% {
+    filter:
+      brightness(1.1)
+      saturate(1.6)
+      sepia(0.35)
+      hue-rotate(240deg)
+      drop-shadow(0 0 12px rgba(157, 124, 255, 0.75));
+  }
+ 
+  /* Deep purple */
+  68% {
+    filter:
+      brightness(1.0)
+      saturate(2.0)
+      sepia(0.5)
+      hue-rotate(260deg)
+      drop-shadow(0 0 10px rgba(120, 80, 255, 0.7));
+  }
+ 
+  /* Subtle flicker — dip */
+  80% {
+    filter:
+      brightness(0.85)
+      saturate(1.4)
+      sepia(0.3)
+      hue-rotate(245deg)
+      drop-shadow(0 0 4px rgba(157, 124, 255, 0.4));
+    opacity: 0.88;
+  }
+ 
+  /* Flicker snap back bright purple */
+  83% {
+    filter:
+      brightness(1.4)
+      saturate(2.2)
+      sepia(0.5)
+      hue-rotate(255deg)
+      drop-shadow(0 0 18px rgba(157, 124, 255, 1.0));
+    opacity: 1;
+  }
+ 
+  /* Fade back to white */
+  100% {
+    filter:
+      brightness(1.4)
+      saturate(0.2)
+      drop-shadow(0 0 4px rgba(255, 255, 255, 0.5));
+  }
+}
   </style>
 </head>
 <body>
