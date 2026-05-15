@@ -111,18 +111,23 @@
 
     /* HERO */
     .hero {
-      position: relative; min-height: 100svh;
-      display: grid; align-items: end;
-      padding: 132px 0 64px; overflow: hidden;
-    }
+  position: relative;
+  min-height: 100svh;
+  display: grid;
+  align-items: start;        /* pushes text to TOP so photo shows below */
+  padding: 100px 0 64px;     /* top padding clears the nav */
+  overflow: hidden;
+}
+
     .hero-media { position: absolute; inset: 0; z-index: -1; }
     .hero-media img {
-      width: 100%; height: 100%; object-fit: cover;
-      /* Show face — centered slightly upper */
-      object-position: center 15%;
-      opacity: 1;
-      filter: saturate(1.05) brightness(0.88) contrast(1.02);
-    }
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 38%;   /* shifts image DOWN so face shows below the text */
+  opacity: 1;
+  filter: saturate(1.05) brightness(0.95) contrast(1.02);
+}
     /* Lighter overlay so face reads clearly */
     .hero-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7,7,11,0.25) 0%, rgba(7,7,11,0.0) 22%, rgba(7,7,11,0.0) 52%, rgba(7,7,11,0.92) 100%), linear-gradient(90deg, rgba(7,7,11,0.5) 0%, rgba(7,7,11,0.12) 45%, rgba(7,7,11,0.32) 100%); }
     .hero-inner, .section-inner {
