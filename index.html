@@ -139,32 +139,118 @@
     }
     h1, h2, h3, p { margin-top: 0; }
     h1 {
-      max-width: 900px; margin-bottom: 20px;
-      font-family: "Pally", Arial, sans-serif; font-weight: 700;
-      font-size: clamp(3.8rem, 12vw, 9.5rem);
-      line-height: 0.85; letter-spacing: 0; text-transform: lowercase;
-      text-shadow: 0 24px 80px rgba(0,0,0,0.55);
-      position: relative; display: inline-block; isolation: isolate;
-    }
-    h1::before, h1::after {
-      content: attr(data-text); position: absolute; inset: 0;
-      z-index: -1; pointer-events: none; opacity: 0; mix-blend-mode: screen;
-    }
-    h1::before {
-      color: var(--aqua);
-      clip-path: polygon(0 10%, 100% 10%, 100% 39%, 0 39%);
-      animation: glitch-a 7s infinite;
-    }
-    h1::after {
-      color: var(--rose);
-      clip-path: polygon(0 58%, 100% 58%, 100% 86%, 0 86%);
-      animation: glitch-b 7s 90ms infinite;
-    }
+  max-width: 900px;
+  margin-bottom: 20px;
+  font-family: "Pally", Arial, sans-serif;
+  font-weight: 700;
+ 
+  /* SMALLER — was clamp(4.5rem, 14vw, 11rem) */
+  font-size: clamp(2.8rem, 8vw, 6rem);
+ 
+  line-height: 0.85;
+  letter-spacing: 0;
+  text-transform: lowercase;
+  position: relative;
+  display: inline-block;
+  isolation: isolate;
+ 
+  /* Ombre white → purple via background-clip */
+  background: linear-gradient(
+    90deg,
+    #ffffff   0%,
+    #e0d4ff  30%,
+    #b89fff  55%,
+    #9d7cff  78%,
+    #7c55e8 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+ 
+  /* Soft glow behind the text */
+  filter: drop-shadow(0 0 18px rgba(157, 124, 255, 0.35));
+ 
+  /* Subtle ombre shift animation */
+  animation: textOmbre 7s ease-in-out infinite alternate;
+}
+ 
+@keyframes textOmbre {
+  0% {
+    filter: drop-shadow(0 0 14px rgba(255, 255, 255, 0.4));
+    background: linear-gradient(
+      90deg,
+      #ffffff  0%,
+      #e0d4ff 35%,
+      #b89fff 62%,
+      #9d7cff 82%,
+      #7c55e8 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+  50% {
+    filter: drop-shadow(0 0 22px rgba(157, 124, 255, 0.55));
+    background: linear-gradient(
+      90deg,
+      #f0eaff  0%,
+      #c9b5ff 28%,
+      #9d7cff 55%,
+      #7344e8 80%,
+      #5a28d4 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+  100% {
+    filter: drop-shadow(0 0 16px rgba(120, 80, 255, 0.45));
+    background: linear-gradient(
+      90deg,
+      #ffffff  0%,
+      #d4c0ff 30%,
+      #a87fff 56%,
+      #8855f0 78%,
+      #6633dd 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+}
+ 
+/* Keep the glitch layers — update these too so they don't
+   show as solid blocks over the ombre text */
+h1::before,
+h1::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0;
+  mix-blend-mode: screen;
+  -webkit-text-fill-color: initial;
+  background: none;
+}
+ 
+h1::before {
+  color: var(--aqua);
+  clip-path: polygon(0 10%, 100% 10%, 100% 39%, 0 39%);
+  animation: glitch-a 7s infinite;
+}
+ 
+h1::after {
+  color: var(--rose);
+  clip-path: polygon(0 58%, 100% 58%, 100% 86%, 0 86%);
+  animation: glitch-b 7s 90ms infinite;
+}
     .hero-copy {
-      max-width: 480px; margin-bottom: 28px;
-      color: rgba(246,242,238,0.75);
-      font-size: clamp(0.95rem, 1.8vw, 1.15rem);
-    }
+  max-width: 440px;
+  margin-bottom: 28px;
+  color: rgba(246, 242, 238, 0.72);
+ 
+  /* slightly smaller so it sits tight under the name */
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
+}
     .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
 
     /* SECTIONS */
