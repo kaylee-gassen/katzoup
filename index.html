@@ -507,6 +507,58 @@ h1::after {
       drop-shadow(0 0 4px rgba(255, 255, 255, 0.5));
   }
 }
+        /* Fluid Layout */
+    h1, h2, h3, p {
+      max-width: 100%; /* Make text elements responsive */
+      margin: 0 auto; /* Center align */
+      padding: 0 10px; /* Add some padding */
+    }
+
+    /* Fluid images and videos */
+    img {
+      width: 100%; /* Make images responsive */
+      height: auto; /* Maintain aspect ratio */
+    }
+
+    /* Responsive navigation */
+    .nav {
+      flex-direction: column; /* Stack navigation items on smaller screens */
+      align-items: center; /* Center align navigation items */
+    }
+
+    /* Media Queries for different screen sizes */
+    @media (max-width: 768px) {
+      .nav-links {
+        flex-direction: column; /* Stack links vertically on small screens */
+      }
+
+      .section-head {
+        grid-template-columns: 1fr; /* Adjust layout for smaller screens */
+      }
+
+      .shop-grid, .mix-grid {
+        grid-template-columns: repeat(2, 1fr); /* Two columns on smaller screens */
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr; /* Stack about sections on smaller screens */
+      }
+
+      .hero-copy {
+        padding: 20px; /* Add padding for better spacing on smaller screens */
+      }
+    }
+
+    @media (max-width: 480px) {
+      .nav-links a {
+        font-size: 0.6rem; /* Reduce font size for very small screens */
+      }
+      
+      .section-title {
+        font-size: 1.5rem; /* Smaller title size on very small screens */
+      }
+    }
+
   </style>
 </head>
 <body>
